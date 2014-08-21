@@ -9,7 +9,7 @@ An extendable typejuggler.
 
 Installation
 ------------
-Either via Composer by requiring "schlaus/schange": "dev-master"
+Either via [Composer](https://packagist.org/packages/schlaus/schange) by requiring "schlaus/schange": "dev-master"
 
 Or just download and include src/schange.php
 
@@ -26,12 +26,14 @@ $result = schange::castTo("banana", 1); OR $result = schange::castToBanana(1);
 The code and tests are pretty straightforward, and should give a pretty good idea of what kind of conversions are done.
 Supported types are *boolean*, *integer*, *string*, *array*, *float*, and *object*. Here's a few examples:
 
+```php
 string("true") => int(1)
 string("true") => array("t", "r", "u", "e")
 float(4.5) => int(5)
 float(4.4) => int(4)
 array("tes", "ting", "!", 123) => string("testing!123")
 NULL => empty variable of target type
+```
 
 Furthermore, associative arrays can be converted to objects (instances of stdClass) with each key => value converted into
 property => value. When converting from objects to arrays, only public properties are preserved. When converting an object
@@ -43,5 +45,6 @@ instance of the requested type.
 For examining whether a variable can be converted to a type, use schange::canCastTo($type, $var); For a list (as an array)
 of possible target types, use schange::castable($var);
 
-DISCLAIMER: I made this class for my own specific purposes, and don't expect it to be immensely useful to other people.
+### DISCLAIMER:
+I made this class for my own specific purposes, and don't expect it to be immensely useful to other people.
 However, I'm happy to help if you do find some use for it and run into problems.
