@@ -1,0 +1,26 @@
+{
+    "name": "schlaus/schange",
+    "description": "A type juggler",
+    "keywords": ["conversion", "typejuggling", "cast"],
+    "type": "library",
+    "homepage": "https://github.com/schlaus/schange",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Klaus 'Schlaus' Karkia",
+            "homepage": "http://schlaus.karkia.me",
+            "email": "klaus@karkia.me"
+        }
+    ],
+    "support": {
+        "email": "klaus@karkia.me"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "schlaus\\schange\\": "src/"
+        }
+    }
+}
