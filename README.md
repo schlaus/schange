@@ -1,6 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/schlaus/schange.png)](http://travis-ci.org/schlaus/schange)
 [![Latest Stable Version](https://poser.pugx.org/schlaus/schange/version.svg)](https://packagist.org/packages/schlaus/schange)
 [![Total Downloads](https://poser.pugx.org/schlaus/schange/downloads.svg)](https://packagist.org/packages/schlaus/schange)
+[![License](https://poser.pugx.org/schlaus/schange/license.svg)](https://packagist.org/packages/schlaus/schange)
 
 Schange
 =======
