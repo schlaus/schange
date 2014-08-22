@@ -165,7 +165,7 @@ class schange {
 			$fn = self::$_casters[$type];
 		} else {
 			if (empty(self::$_defaultCasters)) self::_defaultCasters();
-			if (isset(self::$_defaultCasters)) $fn = self::$_defaultCasters[$type];
+			if (isset(self::$_defaultCasters[$type])) $fn = self::$_defaultCasters[$type];
 			else throw new \Exception("Could not find a function to cast to $type");
 		}
 
