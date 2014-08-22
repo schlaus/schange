@@ -195,21 +195,21 @@ class schange {
 						break;
 					case "string":
 						if (empty($var)) return 0;
-						if (is_numeric($var)) return (int) round(self::castToFloat($var));
-						if (self::canCastTo("bool", $var)) return self::castToInt(self::castToBool($var));
+						if (is_numeric($var)) return (int) round(\schlaus\schange\schange::castToFloat($var));
+						if (\schlaus\schange\schange::canCastTo("bool", $var)) return \schlaus\schange\schange::castToInt(\schlaus\schange\schange::castToBool($var));
 						break;
 					case "array":
 						if (empty($var)) return 0;
 						if (count($var) == 1) {
-							return self::castToInt(reset($var));
+							return \schlaus\schange\schange::castToInt(reset($var));
 						}
 						break;
 					case "double":
 						return (int) round($var);
 						break;
 					case "object":
-						if (null !== $tmp = self::castToStr($var)) return self::castToInt($tmp);
-						if (null !== $tmp = self::castToArr($var)) return self::castToInt($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToStr($var)) return \schlaus\schange\schange::castToInt($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToArr($var)) return \schlaus\schange\schange::castToInt($tmp);
 						return null;
 						break;
 					case "NULL":
@@ -231,13 +231,13 @@ class schange {
 					case "string":
 						if (empty($var)) return 0.0;
 						if (is_numeric($var)) return floatval($var);
-						if (self::canCastTo("bool", $var)) return self::castToFloat(self::castToBool($var));
+						if (\schlaus\schange\schange::canCastTo("bool", $var)) return \schlaus\schange\schange::castToFloat(\schlaus\schange\schange::castToBool($var));
 						return null;
 						break;
 					case "array":
 						if (empty($var)) return 0.0;
 						if (count($var) == 1) {
-							return self::castToFloat(reset($var));
+							return \schlaus\schange\schange::castToFloat(reset($var));
 						}
 						return null;
 						break;
@@ -245,8 +245,8 @@ class schange {
 						return $var;
 						break;
 					case "object":
-						if (null !== $tmp = self::castToStr($var)) return self::castToFloat($tmp);
-						if (null !== $tmp = self::castToArr($var)) return self::castToFloat($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToStr($var)) return \schlaus\schange\schange::castToFloat($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToArr($var)) return \schlaus\schange\schange::castToFloat($tmp);
 						return null;
 						break;
 					case "NULL":
@@ -271,11 +271,11 @@ class schange {
 					case "array":
 						if (empty($var)) return "";
 						if (count($var) == 1) {
-							return self::castToStr(reset($var));
+							return \schlaus\schange\schange::castToStr(reset($var));
 						}
 						$parsedStr = "";
 						foreach ($var as $val) {
-							if (null === $parsedStr .= self::castToStr($val)) return null;
+							if (null === $parsedStr .= \schlaus\schange\schange::castToStr($val)) return null;
 						}
 						return $parsedStr;
 						break;
@@ -284,7 +284,7 @@ class schange {
 						break;
 					case "object":
 						if (method_exists($var, "__toString")) return (string) $var;
-						if (null !== $tmp = self::castToArr($var)) return self::castToStr($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToArr($var)) return \schlaus\schange\schange::castToStr($tmp);
 						return null;
 						break;
 					case "NULL":
@@ -305,13 +305,13 @@ class schange {
 					case "string":
 						if (strtolower($var) === "true") return true;
 						if (strtolower($var) === "false") return false;
-						if (is_numeric($var)) return (bool) self::castToInt($var);
+						if (is_numeric($var)) return (bool) \schlaus\schange\schange::castToInt($var);
 						return null;
 						break;
 					case "array":
 						if (empty($var)) return false;
 						if (count($var) == 1) {
-							return self::castToBool(reset($var));
+							return \schlaus\schange\schange::castToBool(reset($var));
 						}
 						return null;
 						break;
@@ -319,8 +319,8 @@ class schange {
 						return (bool) $var;
 						break;
 					case "object":
-						if (null !== $tmp = self::castToStr($var)) return self::castToBool($tmp);
-						if (null !== $tmp = self::castToArr($var)) return self::castToBool($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToStr($var)) return \schlaus\schange\schange::castToBool($tmp);
+						if (null !== $tmp = \schlaus\schange\schange::castToArr($var)) return \schlaus\schange\schange::castToBool($tmp);
 						return null;
 						break;
 					case "NULL":
@@ -337,7 +337,7 @@ class schange {
 						break;
 					case "integer":
 					case "double":
-						$arr = str_split(self::castToStr($var));
+						$arr = str_split(\schlaus\schange\schange::castToStr($var));
 						foreach ($arr as &$val) {
 							if ($val !== ".") $val = intval($val);
 						}
@@ -365,7 +365,7 @@ class schange {
 					case "integer":
 					case "string":
 					case "double":
-						if (null !== $arr = self::castToArr($var)) return self::castToObj($arr);
+						if (null !== $arr = \schlaus\schange\schange::castToArr($var)) return \schlaus\schange\schange::castToObj($arr);
 						return null;
 						break;
 					case "array":

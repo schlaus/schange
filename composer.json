@@ -5,6 +5,9 @@
     "type": "library",
     "homepage": "https://github.com/schlaus/schange",
     "license": "MIT",
+    "require": {
+        "php": ">=5.3.0"
+    },
     "authors": [
         {
             "name": "Klaus 'Schlaus' Karkia",
