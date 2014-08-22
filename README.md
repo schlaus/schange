@@ -5,7 +5,7 @@
 Schange
 =======
 
-An extendable typejuggler.
+An extendable type juggler.
 
 Installation
 ------------
@@ -19,9 +19,20 @@ What Schange does is to try to cast a variable to a given type by doing some con
 based on my usecase, and could be somewhat off or completely ludicrous in different situations. Parental discretion
 is adviced.
 
-Syntax is: $result = schange::castTo("int", "42"); OR $result = schange::castToInt("42");
+Syntax is:
+
+```php
+$result = schange::castTo("int", "42");
+// OR
+$result = schange::castToInt("42");
+```
 Once a custom casting function has been loaded, it can be used in the exact same fashion:
-$result = schange::castTo("banana", 1); OR $result = schange::castToBanana(1);
+
+```php
+$result = schange::castTo("banana", 1);
+// OR
+$result = schange::castToBanana(1);
+```
 
 The code and tests are pretty straightforward, and should give a pretty good idea of what kind of conversions are done.
 Supported types are *boolean*, *integer*, *string*, *array*, *float*, and *object*. Here's a few examples:
@@ -45,6 +56,7 @@ instance of the requested type.
 For examining whether a variable can be converted to a type, use schange::canCastTo($type, $var); For a list (as an array)
 of possible target types, use schange::castable($var);
 
-### DISCLAIMER:
+DISCLAIMER:
+-----------
 I made this class for my own specific purposes, and don't expect it to be immensely useful to other people.
 However, I'm happy to help if you do find some use for it and run into problems.
