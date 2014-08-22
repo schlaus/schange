@@ -6,7 +6,7 @@
  * @copyright   Copyright (c) 2014 Klaus Karkia
  * @license 	http://schlaus.mit-license.org MIT
  * @link        http://github.com/schlaus/schange
- * @version     1.0
+ * @version     1.0.1
  * 
  * *USAGE*
  * What Schange does is to try to cast a variable to a given type by doing some conversions. The conversion logic is
